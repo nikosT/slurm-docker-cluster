@@ -14,6 +14,9 @@ RUN set -ex \
     && yum -y update \
     && yum -y install dnf-plugins-core \
     && yum config-manager --set-enabled powertools \
+    && yum -y install epel-release \
+    && crb enable \
+    && dnf -y copr enable openfoam/openfoam \
     && yum -y install \
        wget \
        bzip2 \
@@ -37,6 +40,12 @@ RUN set -ex \
        vim-enhanced \
        http-parser-devel \
        json-c-devel \
+       dnf-plugins-core \
+       openfoam-selector \
+       openfoam2312 \
+       openfoam2312-default \
+       diffutils \
+    && dnf --enablerepo=devel -y install pmix-devel \
     && yum clean all \
     && rm -rf /var/cache/yum
 
@@ -60,7 +69,7 @@ RUN set -x \
     && git clone -b ${SLURM_TAG} --single-branch --depth=1 https://github.com/SchedMD/slurm.git \
     && pushd slurm \
     && ./configure --enable-debug --prefix=/usr --sysconfdir=/etc/slurm \
-        --with-mysql_config=/usr/bin  --libdir=/usr/lib64 \
+        --with-mysql_config=/usr/bin  --libdir=/usr/lib64 --with-pmix \
     && make install \
     && install -D -m644 etc/cgroup.conf.example /etc/slurm/cgroup.conf.example \
     && install -D -m644 etc/slurm.conf.example /etc/slurm/slurm.conf.example \

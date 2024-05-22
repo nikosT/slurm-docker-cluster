@@ -2,16 +2,17 @@
 1. Install [Docker](https://docs.docker.com/engine/install)
 2. [Download](https://github.com/nikosT/slurm-docker-cluster/archive/refs/heads/master.zip) and unzip material
 3. `cd slurm-docker-cluster-master`
-4. `docker compose up -d`
-5. `docker compose ps` to check if containers are up. By default, it is expected to be 5 up.
+4. `source alias`
+5. `chmod -R 777 slurm`
 
 # Run
-6. `source alias`
+6. `start` (start HPC infra)
+6. `stop` (stop HPC infra)
 7. `ssh slurm@slurmctld`
 
 # Example
-8. $ `mpicc mpi_hello.c -o mpi_hello`
-9. $ `sbatch test.sh`
+8. $ `cd dummyCase`
+9. $ `sbatch batchCom`
 
 #
 # MORE FOR DEVS

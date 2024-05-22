@@ -1,0 +1,86 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2004                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     simpleFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         1000;
+
+deltaT          1;
+
+writeControl    timeStep;
+
+writeInterval   500;
+
+purgeWrite      1;
+
+writeFormat     ascii;
+
+writePrecision  16;
+
+writeCompression on;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+functions
+{
+    // Make sure to check $FOAM_ETC/caseDicts/postProcessing
+    // for a lot of useful function setups
+
+    // Write solver residuals to files
+    solverInfo
+    {
+        type            solverInfo;
+        libs            ("libutilityFunctionObjects.so");
+        fields          (U p);
+        writeResidualFields false;
+    }
+    // Generates the total pressure field
+	pt
+	{
+		type         pressure;
+		libs         ("libfieldFunctionObjects.so");
+		writeControl writeTime;
+		log          false;
+        mode         totalCoeff; //staticCoeff;
+		pInf         0;
+		UInf         (0.5 0 0);
+        rho          rhoInf;
+		rhoInf       1060;
+	}
+    // Compute forces on the duct walls
+    #includeFunc forces-upper
+    #includeFunc forces-lower
+    #includeFunc forces-middle
+    // Compute volume flow rate for each outlet
+    #includeFunc volumeFlowRate1;
+    #includeFunc volumeFlowRate2;
+    // Compute total pressure coefficient for the inlet and outlets
+    #includeFunc ptInlet;
+    #includeFunc ptOutlet1;
+    #includeFunc ptOutlet2;
+}
+
+// ************************************************************************* //
