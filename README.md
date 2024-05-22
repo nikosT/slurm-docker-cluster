@@ -6,9 +6,13 @@
 5. `chmod -R 777 slurm`
 
 # Run
-6. `start` (start HPC infra)
-6. `stop` (stop HPC infra)
-7. `ssh slurm@slurmctld`
+* `start` (start HPC infra)
+* `stop` (stop HPC infra)
+* `ssh slurm@slurmctld`
+
+# Test
+6. $ `cd mpi_hello`
+7. $ `sbatch test.sh`
 
 # Example
 8. $ `cd dummyCase`
