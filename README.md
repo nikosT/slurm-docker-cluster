@@ -2,21 +2,23 @@
 1. Install [Docker](https://docs.docker.com/engine/install)
 2. `git clone -b openfoam-pull https://github.com/nikosT/slurm-docker-cluster` or [download](https://github.com/nikosT/slurm-docker-cluster/archive/refs/heads/openfoam-pull.zip)
 3. `cd slurm-docker-cluster-master`
-4. `source alias` or `. .\alias.ps1`
+4. `source alias` in Linux
+4. `powershell -ExecutionPolicy Bypass; `. .\alias.ps1`
 5. `chmod -R 777 slurm`
 
 # Run
-* `start` (start HPC infra)
-* `stop` (stop HPC infra)
+* `start` (or `wstart`)
+* `stop` (or `wstop`)
 * `ssh slurm@slurmctld`
 
 # Test
-6. $ `cd mpi_hello`
-7. $ `sbatch test.sh`
+6. `status` (or `wstatus`)
+7. $ `cd mpi_hello`
+8. $ `sbatch test.sh`
 
 # Example
-8. $ `cd dummyCase`
-9. $ `sbatch batchCom`
+9. $ `cd dummyCase`
+10. $ `sbatch batchCom`
 
 #
 # MORE FOR DEVS

@@ -3,19 +3,19 @@ function ssh {
         [string]$userHost
     )
 
-    $user, $host = $userHost -split '@'
+    $wuser, $whost = $userHost -split '@'
     Write-Output "Connected to HPC facility..."
-    docker compose exec -u $user -w /home/$user $host bash
+    docker-compose exec -u $wuser -w /home/$wuser $whost bash
 }
 
-function start {
-    docker compose up -d
+function wstart {
+    docker-compose up -d
 }
 
-function stop {
-    docker compose down
+function wstop {
+    docker-compose down
 }
 
-function status {
-    docker compose ps
+function wstatus {
+    docker-compose ps
 }
