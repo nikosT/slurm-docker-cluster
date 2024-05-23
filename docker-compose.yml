@@ -12,7 +12,7 @@ services:
       - var_lib_mysql:/var/lib/mysql
 
   slurmdbd:
-    image: slurm-docker-cluster:${IMAGE_TAG:-21.08}
+    image: intergallactic/slurm-docker-cluster-openfoam:21.08
     build:
       context: .
       args:
@@ -30,7 +30,7 @@ services:
       - mysql
 
   slurmctld:
-    image: slurm-docker-cluster:${IMAGE_TAG:-21.08}
+    image: intergallactic/slurm-docker-cluster-openfoam:21.08
     command: ["slurmctld"]
     container_name: slurmctld
     hostname: slurmctld
@@ -46,7 +46,7 @@ services:
       - "slurmdbd"
 
   c1:
-    image: slurm-docker-cluster:${IMAGE_TAG:-21.08}
+    image: intergallactic/slurm-docker-cluster-openfoam:21.08
     command: ["slurmd"]
     hostname: c1
     container_name: c1
@@ -62,7 +62,7 @@ services:
       - "slurmctld"
 
   c2:
-    image: slurm-docker-cluster:${IMAGE_TAG:-21.08}
+    image: intergallactic/slurm-docker-cluster-openfoam:21.08
     command: ["slurmd"]
     hostname: c2
     container_name: c2
