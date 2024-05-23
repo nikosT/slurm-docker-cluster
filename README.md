@@ -1,6 +1,6 @@
 # Installation
 1. Install [Docker](https://docs.docker.com/engine/install)
-2. [Download](https://github.com/nikosT/slurm-docker-cluster/archive/refs/heads/master.zip) and unzip material
+2. `git clone -b openfoam-pull https://github.com/nikosT/slurm-docker-cluster` or [download](https://github.com/nikosT/slurm-docker-cluster/archive/refs/heads/openfoam-pull.zip)
 3. `cd slurm-docker-cluster-master`
 4. `source alias`
 5. `chmod -R 777 slurm`
