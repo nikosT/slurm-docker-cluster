@@ -3,7 +3,7 @@
 2. `git clone -b openfoam-pull https://github.com/nikosT/slurm-docker-cluster` or [download](https://github.com/nikosT/slurm-docker-cluster/archive/refs/heads/openfoam-pull.zip)
 3. `cd slurm-docker-cluster-master`
 4. `source alias` in Linux
-4. `powershell -ExecutionPolicy Bypass; `. .\alias.ps1`
+4. `powershell -ExecutionPolicy Bypass; . .\alias.ps1` in windows
 5. `chmod -R 777 slurm`
 
 # Run
