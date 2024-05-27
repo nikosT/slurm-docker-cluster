@@ -6,14 +6,14 @@ ssh() {
     docker compose exec -u $user -w /home/$user $host bash
 }
 
-start() {
+wstart() {
     docker compose up -d
 }
 
-stop() {
+wstop() {
     docker compose down
 }
 
-status() {
+wstatus() {
     docker compose ps
 }
