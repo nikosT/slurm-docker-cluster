@@ -3,17 +3,17 @@ ssh() {
     user="${1%%@*}"
     host="${1#*@}"
     echo "Connected to HPC facility..."
-    docker compose exec -u $user -w /home/$user $host bash
+    sudo docker compose exec -u $user -w /home/$user $host bash
 }
 
 wstart() {
-    docker compose up -d
+    sudo docker compose up -d
 }
 
 wstop() {
-    docker compose down
+    sudo docker compose down
 }
 
 wstatus() {
-    docker compose ps
+    sudo docker compose ps
 }
