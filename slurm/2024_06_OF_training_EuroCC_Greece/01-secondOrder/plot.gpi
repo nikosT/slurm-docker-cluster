@@ -1,0 +1,9 @@
+set term qt persist
+set grid 
+set xl 'Iteration'
+set yl 'Residual' 
+set format y '%1.0e'
+set logscale y
+p 'postProcessing/solverInfo/0/solverInfo.dat' u 1:3  w l lw 2 t 'Ux',\
+  'postProcessing/solverInfo/0/solverInfo.dat' u 1:6  w l lw 2 t 'Uy',\
+  'postProcessing/solverInfo/0/solverInfo.dat' u 1:11 w l lw 2 t 'p'

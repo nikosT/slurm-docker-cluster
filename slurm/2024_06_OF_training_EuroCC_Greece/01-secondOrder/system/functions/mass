@@ -1,0 +1,15 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     |
+    \\  /    A nd           | Web:      www.OpenFOAM.com
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+\*---------------------------------------------------------------------------*/
+
+name   Inlet;
+fields (phi);
+//fields (static(p)_coeff);
+
+operation sum;
+#includeEtc "caseDicts/postProcessing/surfaceFieldValue/patch.cfg"

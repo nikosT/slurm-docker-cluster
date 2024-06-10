@@ -1,5 +1,0 @@
-        rhoInf      1006;
-        patches     (middleWall);
-        CofR        (0 0 0);
-        pitchAxis   (0 1 0);
-        #includeEtc "caseDicts/postProcessing/forces/forcesIncompressible.cfg"

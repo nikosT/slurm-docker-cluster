@@ -1,0 +1,23 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     |
+    \\  /    A nd           | Web:      www.OpenFOAM.com
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+\*---------------------------------------------------------------------------*/
+
+name   lower;
+fields (static(p)_coeff);
+
+
+operation       none;
+type            surfaceFieldValue;
+libs            ("libfieldFunctionObjects.so");
+
+writeControl    writeTime;
+
+writeFields     true;
+surfaceFormat   raw;
+log             false;
+regionType      patch;
