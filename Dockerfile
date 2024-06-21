@@ -45,6 +45,7 @@ RUN set -ex \
        openfoam2312 \
        openfoam2312-default \
        diffutils \
+       nano \
     && dnf --enablerepo=devel -y install pmix-devel \
     && yum clean all \
     && rm -rf /var/cache/yum
