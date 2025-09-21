@@ -13,4 +13,4 @@
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 
-$HOME/openmp_examples/montecarlo
+$HOME/openmp_examples/ScalabilityTuningRF.py
