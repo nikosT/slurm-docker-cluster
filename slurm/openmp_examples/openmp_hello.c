@@ -1,27 +1,47 @@
+#define _GNU_SOURCE  // Must be defined before any headers to get GNU extensions
+
 #include <stdio.h>
 #include <unistd.h>
 #include <omp.h>
+#include <sched.h>
+#include <stdlib.h>
+
+// compile gcc -fopenmp -O3 openmp_hello.c -o openmp_hello
+
+int get_socket_id(int cpu_id) {
+    char path[128];
+    snprintf(path, sizeof(path),
+             "/sys/devices/system/cpu/cpu%d/topology/physical_package_id", cpu_id);
+
+    FILE *f = fopen(path, "r");
+    if (!f) {
+        return -1; // Failed to read socket ID
+    }
+
+    int socket_id;
+    if (fscanf(f, "%d", &socket_id) != 1) {
+        fclose(f);
+        return -1;
+    }
+    fclose(f);
+    return socket_id;
+}
 
 int main(int argc, char *argv[]) {
-    // Get the hostname of the current node
     char hostname[256];
     gethostname(hostname, sizeof(hostname));
 
-    // Set the number of threads (optional - can be set via OMP_NUM_THREADS env variable)
-    // omp_set_num_threads(4);
-    
-    // Parallel region starts here
     #pragma omp parallel
     {
-        // Get the thread ID and total number of threads
         int tid = omp_get_thread_num();
         int num_threads = omp_get_num_threads();
-        
-        // Print the hostname and process ID
-        // Note: All threads share the same process ID since they're in the same process
-        printf("Hello from thread %d of %d on %s (pid: %d)\n", 
-               tid, num_threads, hostname, getpid());
+        int cpu_id = sched_getcpu();   // Now properly declared
+        int socket_id = get_socket_id(cpu_id);
+
+        printf("Hello from thread %d of %d on %s (pid: %d) | CPU: %d | Socket: %d\n",
+               tid, num_threads, hostname, getpid(), cpu_id, socket_id);
     }
 
     return 0;
 }
+

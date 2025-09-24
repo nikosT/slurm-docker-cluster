@@ -1,0 +1,46 @@
+Number of existing processes: 16, Number of used processes: 4
+Process 3 started
+Process 3, min_samples_leaf: 31, Pearson: 0.7527035037968721
+Process 3, min_samples_leaf: 32, Pearson: 0.7403044959820203
+Process 3, min_samples_leaf: 33, Pearson: 0.7222900139624145
+Process 3, min_samples_leaf: 34, Pearson: 0.7508508054927702
+Process 3, min_samples_leaf: 35, Pearson: 0.7295446954076464
+Process 3, min_samples_leaf: 36, Pearson: 0.7381396022020935
+Process 3, min_samples_leaf: 37, Pearson: 0.7312822836307682
+Process 3, min_samples_leaf: 38, Pearson: 0.7417556260170262
+Process 3, min_samples_leaf: 39, Pearson: 0.7324222174425644
+Process 3, min_samples_leaf: 40, Pearson: 0.7275869126125819
+Process 2 started
+Process 2, min_samples_leaf: 21, Pearson: 0.806339417889965
+Process 2, min_samples_leaf: 22, Pearson: 0.7945926734481797
+Process 2, min_samples_leaf: 23, Pearson: 0.7780369488055661
+Process 2, min_samples_leaf: 24, Pearson: 0.8063629336929437
+Process 2, min_samples_leaf: 25, Pearson: 0.7716760361102529
+Process 2, min_samples_leaf: 26, Pearson: 0.7888752322371926
+Process 2, min_samples_leaf: 27, Pearson: 0.7871365817246394
+Process 2, min_samples_leaf: 28, Pearson: 0.7818867362766981
+Process 2, min_samples_leaf: 29, Pearson: 0.7719771745944881
+Process 2, min_samples_leaf: 30, Pearson: 0.7704514479491722
+Process 1 started
+Process 1, min_samples_leaf: 11, Pearson: 0.8762510586606241
+Process 1, min_samples_leaf: 12, Pearson: 0.8590848174353942
+Process 1, min_samples_leaf: 13, Pearson: 0.8401404030364953
+Process 1, min_samples_leaf: 14, Pearson: 0.8597334061723578
+Process 1, min_samples_leaf: 15, Pearson: 0.8350901281451347
+Process 1, min_samples_leaf: 16, Pearson: 0.8481025369515893
+Process 1, min_samples_leaf: 17, Pearson: 0.8326413294711484
+Process 1, min_samples_leaf: 18, Pearson: 0.8311074971669228
+Process 1, min_samples_leaf: 19, Pearson: 0.8146945809042135
+Process 1, min_samples_leaf: 20, Pearson: 0.8309395258525206
+Process 0 started
+Process 0, min_samples_leaf: 1, Pearson: 0.931010355321648
+Process 0, min_samples_leaf: 2, Pearson: 0.9306310919367863
+Process 0, min_samples_leaf: 3, Pearson: 0.9177086754478959
+Process 0, min_samples_leaf: 4, Pearson: 0.9190399758834817
+Process 0, min_samples_leaf: 5, Pearson: 0.9112016588659435
+Process 0, min_samples_leaf: 6, Pearson: 0.907987587650362
+Process 0, min_samples_leaf: 7, Pearson: 0.8987851154792679
+Process 0, min_samples_leaf: 8, Pearson: 0.8986111694738543
+Process 0, min_samples_leaf: 9, Pearson: 0.8855643334977205
+Process 0, min_samples_leaf: 10, Pearson: 0.8811228175395149
+Parallel Execution Time: 1795.28308 milliseconds

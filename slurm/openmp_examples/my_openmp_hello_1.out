@@ -1,0 +1,8 @@
+Hello from thread 0 of 8 on c1 (pid: 31) | CPU: 14 | Socket: 0
+Hello from thread 4 of 8 on c1 (pid: 31) | CPU: 10 | Socket: 0
+Hello from thread 1 of 8 on c1 (pid: 31) | CPU: 6 | Socket: 0
+Hello from thread 5 of 8 on c1 (pid: 31) | CPU: 3 | Socket: 0
+Hello from thread 2 of 8 on c1 (pid: 31) | CPU: 12 | Socket: 0
+Hello from thread 6 of 8 on c1 (pid: 31) | CPU: 8 | Socket: 0
+Hello from thread 3 of 8 on c1 (pid: 31) | CPU: 1 | Socket: 0
+Hello from thread 7 of 8 on c1 (pid: 31) | CPU: 4 | Socket: 0

@@ -1,0 +1,8 @@
+Thread 0: Time = 3.366359 seconds
+Thread 2: Time = 3.366806 seconds
+Thread 3: Time = 3.367390 seconds
+Thread 1: Time = 3.381848 seconds
+
+Estimated value of π: 3.141607
+Total execution time: 3.382159 seconds
+Number of threads used: 4

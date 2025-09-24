@@ -3,6 +3,8 @@
 #include <time.h>
 #include <omp.h>
 
+// compile gcc -fopenmp -O3 montecarlo.c -o montecarlo
+
 int main() {
     long num_points = 1000000000; // Fixed problem size
     long points_inside_circle = 0;
